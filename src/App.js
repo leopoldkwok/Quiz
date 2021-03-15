@@ -13,6 +13,7 @@ function App() {
     index,
     correct,
     nextQuestion,
+    checkAnswer,
   } = useGlobalContext();
 
   if (waiting) {
@@ -40,6 +41,7 @@ function App() {
                 <button
                   key={index}
                   className='answer-btn'
+                  onClick={() => checkAnswer(correct_answer === answer)}
                   dangerouslySetInnerHTML={{ __html: answer }}
                 />
               );
